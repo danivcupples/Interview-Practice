@@ -4,20 +4,11 @@ function isUnique(str){
   str = str.toLowerCase();
   var result = " ";
   for (var i = 0; i < str.length; i++){
-    if (i === 0){
-      if (str.includes(str[i], 1)){
-        result = "we've got a repeater";
-        break;
-      } else {
-        result = "how unique!";
-      }
+    if (str.includes(str[i], i+1)){
+      result = "we've got a repeater";
+      break;
     } else {
-      if (str.includes(str[i], i+1)){
-        result = "we've got a repeater";
-        break;
-      } else {
-        result = "how unique!";
-      }
+      result = "how unique!";
     }
   }
   console.log(result);
